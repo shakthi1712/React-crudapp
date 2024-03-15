@@ -19,7 +19,7 @@ export default function MovieDetails() {
         color:movie.rating >= 7 ? "green":"red",
     };
     return (
-        <div>
+        <div className='movie--details'>
             <iframe width="996" height="560" src={movie.trailer}  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <div className='movie-details-container'>
                 <div className="movie-des">
