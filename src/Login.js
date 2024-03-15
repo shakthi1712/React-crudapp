@@ -2,7 +2,7 @@ import React from 'react'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useFormik } from 'formik';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 
 export default function Login() {
@@ -21,6 +21,7 @@ export default function Login() {
         },
 
     });
+    const navigate=useNavigate();
     return (
         <form className='login' onSubmit={formik.handleSubmit}>
             <h1>Login</h1>
@@ -46,7 +47,9 @@ export default function Login() {
                 error={formik.touched.password && formik.errors.password}
                 helperText={formik.touched.password && formik.errors.password ? formik.errors.password : null}
             />
-            <Button variant="contained" type='submit'>Submit</Button>
+            <Button variant="contained" type='submit'
+            onClick={() => navigate(`/portal/movie`)}
+            >Submit</Button>
             <h4>Don't have an account<Link to="/register">Register</Link></h4>
         </form>
     )

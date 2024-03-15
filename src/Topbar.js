@@ -11,9 +11,11 @@ export default function Topbar({mode,setmode}) {
   return (
    
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar className='top-bar'>
+          <div>
           <Button variant="inherit" onClick={()=>navigate("/portal/movie")}>Movie</Button>
           <Button variant="inherit" onClick={()=>navigate("/portal/addmovie")}>AddMovie</Button>
+          </div>
           <Button color='inherit' onClick={()=>setmode(mode === "light" ? "dark" :"light")} startIcon={mode==="light"?<Brightness7Icon />:<Brightness4Icon/>}></Button>
         </Toolbar>
       </AppBar>

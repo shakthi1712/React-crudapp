@@ -108,4 +108,8 @@
   display: flex;
   justify-content:space-between;
  }
+ .top-bar{
+  display: flex;
+  justify-content:space-between;
+ }
  
