@@ -1,0 +1,111 @@
+
+.addForm{
+  max-width: 400px;
+  display: flex;
+  margin: 30px auto ;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  gap:20px;
+}
+/* end */
+.register{
+  max-width: 400px;
+  display: flex;
+  margin: 30px auto ;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  gap:20px;
+}
+.login{
+  max-width: 400px;
+  display: flex;
+  margin: 30px auto ;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  gap:20px;
+}
+.portal{
+  display: flex;
+  flex-direction: column;
+}
+
+.page-not-found{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.page-not-found>img{
+  width: 100%;
+}
+.movie-container{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 254, 254);
+  box-shadow: -1px 1px 7px -1px rgba(0,0,0,0.75);
+  border-radius: 7.777px;
+}
+.movie-container:hover{
+  box-shadow: 1px 19px 68px -7px rgba(0,0,0,0.75);
+  animation: animate 2s ease-in;
+}
+ .movie-spec{
+  display: flex;
+  flex-direction: column;
+  font-size: small;
+} 
+.spec-cont{
+  margin-top: -30px;
+  display: flex;
+  justify-content: space-between;
+
+}
+.movie-summary{
+  margin: 0;
+  display: flex;
+  text-align:left;
+  padding: 5px;
+}
+.movie-poster{
+  width: 300px;
+  height: 300px;
+  display: flex;
+  
+}
+.like-button>button{
+  border: 0;
+
+}
+.movie-rating{
+  line-height: 38px;
+   display: inline;
+}
+.movie-name{
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+ .movie-l{
+  width: 100%;
+  /* margin-left: 100px;
+  margin-top: 50px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 40px 0px;
+  gap:40px;
+ 
+ }
+ @keyframes animate {
+    100%{
+      transform: scaleY(10deg);
+    }
+ }
+ .card-action{
+  display: flex;
+  justify-content:space-between;
+ }
+ 
