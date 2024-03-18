@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import Movie from './Movie'
 import './App.css'
+import { API } from './Global';
 
 export default function MovieList() {
     const [movie,setMovie]=useState([]);
 
     const getMovies=()=>{
-        fetch("https://65f16b76034bdbecc7626ffb.mockapi.io/Movie1",{
+        fetch(`${API}/getmethod`,{
             method:"GET",
+            headers:{
+                "backend-token":localStorage.getItem("storetoken")
+            }
         })
         .then((data)=>data.json())
         .then((msv)=>setMovie(msv));

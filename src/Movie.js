@@ -12,12 +12,13 @@ import CardContent from '@mui/material/CardContent';
 import EditIcon from '@mui/icons-material/Edit';
 import './App.css'
 import { useNavigate } from 'react-router-dom';
+import { API } from './Global';
 
 export default function Movie({ movieTake,getMovies }) {
     const [show, setshow] = useState(false);
     const navigate = useNavigate();
     const deleteMovie=(id)=>{
-            fetch(`https://65f16b76034bdbecc7626ffb.mockapi.io/Movie1/${id}`,{
+            fetch(`${API}/delete/${id}`,{
                 method:"DELETE",
             }).then(()=>getMovies())
             .then(()=>alert("Movie deleted"))
@@ -34,7 +35,7 @@ export default function Movie({ movieTake,getMovies }) {
                             {show ? <ExpandLessIcon /> : <ExpandMoreIcon />}
                         </IconButton>
                             <IconButton>
-                                <InfoIcon fontSize='small' color='primary' onClick={() => navigate(`/portal/view/${movieTake.id}`)} />
+                                <InfoIcon fontSize='small' color='primary' onClick={() => navigate(`/portal/view/${movieTake._id}`)} />
                             </IconButton></h2>
                         <h3 className="movie-rating">⭐{movieTake.rating}</h3>
                     </div>
@@ -46,12 +47,12 @@ export default function Movie({ movieTake,getMovies }) {
                 <Counter />
                 <div>
                 <IconButton
-                    onClick={() => navigate(`/portal/edit/${movieTake.id}`)}
+                    onClick={() => navigate(`/portal/edit/${movieTake._id}`)}
                 >
                     <EditIcon color='primary' />
                 </IconButton>
                 <IconButton
-                   onClick={()=>deleteMovie(movieTake.id)}
+                   onClick={()=>deleteMovie(movieTake._id)}
                 >
                     <DeleteIcon color='primary' />
                 </IconButton>

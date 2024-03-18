@@ -2,13 +2,14 @@ import { Button } from '@mui/base';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { API } from './Global';
 
 export default function MovieDetails() {
     const { id } = useParams();
     const [movie, setmovie] = useState([]);
     const navigate=useNavigate();
     useEffect(() => {
-        fetch(`https://65f16b76034bdbecc7626ffb.mockapi.io/Movie1/${id}`, {
+        fetch(`${API}/getone/${id}`, {
             method: "GET"
         })
             .then((data) => data.json())
@@ -20,7 +21,7 @@ export default function MovieDetails() {
     };
     return (
         <div className='movie--details'>
-            <iframe width="996" height="560" src={movie.trailer}  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe className='iframe' src={movie.trailer}  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <div className='movie-details-container'>
                 <div className="movie-des">
                     <h2 className="movie--name">
